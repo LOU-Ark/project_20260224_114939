@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>プライバシーポリシー | ロボット心理学研究所</title>
+<style>
+        :root {
+            --accent-teal: #2dd4bf;
+            --accent-blue: #3b82f6;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --font-main: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+
+        /* --- Design Tokens & Utilities --- */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-teal), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 24px;
+        }
+
+        /* --- Header Styles --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent-teal);
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* --- Content Styles --- */
+        .policy-header {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .policy-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .policy-section {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--accent-teal);
+            padding-left: 16px;
+        }
+
+        .policy-section h3 {
+            font-size: 1.1rem;
+            color: var(--accent-teal);
+            margin: 24px 0 12px;
+        }
+
+        .policy-section p, .policy-section li {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent-blue);
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- Footer Styles --- */
+        footer {
+            background: #070b14;
+            padding: 80px 5% 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h4 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-links h5 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            padding-left: 0;
+        }
+
+        .footer-links li::before { content: none; }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        .footer-baseline {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .narrative {
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .policy-header h1 { font-size: 2rem; }
+            .policy-section { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">ロボット心理学研究所</div>
+<div class="nav-links">
+<a href="../../index.html">Home</a>
+<a href="../../vision/index.html">Vision</a>
+<a href="../../solutions/index.html">Solutions</a>
+<a href="../../contact/index.html">Contact</a>
+</div>
+</nav>
+</header>
+<main class="container">
+<div class="policy-header">
+<h1><span class="gradient-text">Privacy Policy</span></h1>
+<p>ロボット心理学研究所（以下「当研究所」）は、高度な情報技術と心理学的知見を扱う機関として、データ保護の透明性を極めて重要な社会的責務と定義します。</p>
+</div>
+<section class="policy-section">
+<h2>1. データ保護に対するフィロソフィー</h2>
+<p>当研究所は、<strong>「スペックの追求から、関係性の設計へ」</strong>というビジョンのもと、人間とロボットの共生における信頼の礎として、お預かりする情報を厳格に管理します。データは単なる符号ではなく、Society 5.0における人間味（エモーション）を解明するための、かけがえのない資源であると認識しています。</p>
+</section>
+<section class="policy-section">
+<h2>2. 収集する情報の定義と手法</h2>
+<p>当研究所は、学術的・技術的な知見の発信およびサービスの提供にあたり、以下の情報を適法かつ公正な手段によって取得します。</p>
+<ul>
+<li><strong>ユーザー識別情報：</strong> 氏名、メールアドレス、所属組織等の連絡先情報。</li>
+<li><strong>インタラクションデータ：</strong> HRI（人間とロボットの相互作用）の最適化研究における、認知反応や行動ログ。</li>
+<li><strong>技術情報：</strong> IPアドレス、クッキー（Cookie）、ブラウザの種類等のアクセス解析データ。</li>
+</ul>
+</section>
+<section class="policy-section">
+<h2>3. 利用目的の明示</h2>
+<p>収集した情報は、以下の<strong>「3つのパラダイム」</strong>を具現化する目的にのみ利用します。</p>
+<h3>① HRIの最適化と研究アーカイブ</h3>
+<p>人間とロボットの新しい関係性を提示するための学術研究、および認知科学的アプローチによるユーザー体験の向上。</p>
+<h3>② エシカル・デザインの確立</h3>
+<p>倫理的観点に基づいたAI・ロボットの設計ガイドライン策定、および不気味の谷現象の回避に向けた分析。</p>
+<h3>③ 社会受容性のデータ化</h3>
+<p>ロボットが社会に導入される際の心理的受容性を数値化し、社会実装におけるミッシングピースを補完するコンサルティング業務。</p>
+</section>
+<section class="policy-section">
+<h2>4. 第三者への開示・提供</h2>
+<p>当研究所は、法令に基づく場合を除き、あらかじめご本人の同意を得ることなく、個人情報を第三者に提供することはありません。ただし、共同研究等の提携先においては、当研究所と同等の厳格な守秘義務を課した上で、必要最小限の範囲で情報を共有する場合があります。</p>
+</section>
+<section class="policy-section">
+<h2>5. 高度なセキュリティ対策</h2>
+<p>「冷たい技術」に「温かい心理学」を融合させる当研究所の姿勢は、セキュリティ設計においても一貫しています。最新の暗号化技術（SSL/TLS）の導入、不正アクセス防止システム、および物理的・組織的な管理体制を構築し、情報の漏洩、紛失、改ざんを徹底して防ぎます。</p>
+</section>
+<section class="policy-section">
+<h2>6. 権利の行使と開示請求</h2>
+<p>ユーザーは、自身の個人情報について開示、訂正、削除、または利用停止を求める権利を有します。当研究所は、ご本人であることを確認した上で、未踏の領域を探求するパートナーとして誠実かつ迅速に対応いたします。</p>
+</section>
+<section class="policy-section">
+<h2>7. 継続的改善とポリシーの改定</h2>
+<p>テクノロジーと人間社会の未来は常に進化しています。当研究所は、最新の法的要件および倫理観に基づき、本ポリシーを継続的に改善・アップデートしてまいります。重要な変更がある場合は、本ウェブサイト上にて告知いたします。</p>
+</section>
+</main>
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<h4>ロボット心理学研究所（Robot Psychology Institute）</h4>
+<p>承知いたしました。まだインタビューの入り口ではありますが、現在の「ロボット心理学」という非常に強力で先進的なキーワードをもとに、現時点で想定されるサイトアイデンティティを構築しています。</p>
+</div>
+<div class="footer-links">
+<h5>Sitemap</h5>
+<ul>
+<li><a href="../../index.html">ホーム</a></li>
+<li><a href="../../index.html">私について</a></li>
+<li><a href="../../index.html">哲学</a></li>
+</ul>
+</div>
+<div class="footer-links">
+<h5>Contents</h5>
+<ul>
+<li><a href="../../index.html">PROJECTS</a></li>
+<li><a href="../../insights/index.html">INSIGHTS</a></li>
+<li><a href="../../index.html">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-baseline">
+<div>© 2025 ロボット心理学研究所（Robot Psychology Institute） Portfolio. All rights reserved.</div>
+<div class="narrative">NARRATIVE DESIGN &amp; HUMANITIES</div>
+</div>
+</footer>
+</body>
+</html>

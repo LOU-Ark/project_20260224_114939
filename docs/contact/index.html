@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CONTACT | ロボット心理学研究所</title>
+<style>
+        :root {
+            --accent-teal: #2dd4bf;
+            --accent-blue: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --font-main: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Global Components --- */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* --- Header Styling (Provided Snippet) --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* --- Main Content --- */
+        main {
+            padding-top: 120px;
+        }
+
+        .contact-hero {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-hero p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Consultation Categories --- */
+        .consultation-types {
+            max-width: 1200px;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .type-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .type-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-teal);
+        }
+
+        .type-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-teal);
+        }
+
+        .type-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* --- Form Section --- */
+        .form-section {
+            background: linear-gradient(to bottom, transparent, rgba(45, 212, 191, 0.05));
+            padding: 6rem 2rem;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .manifesto-banner {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .manifesto-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            color: white;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Footer Styling (Provided Snippet) --- */
+        footer {
+            background: #000;
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h5 {
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        .footer-baseline {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .narrative {
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">ロボット心理学研究所</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="../vision/index.html">Vision</a>
+<a href="../solutions/index.html">Solutions</a>
+<a href="index.html">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<section class="contact-hero">
+<h1 class="gradient-text">CONTACT</h1>
+<p>未踏の領域を、共に定義する。Society 5.0における人間とテクノロジーの新しい関係性を構築するための、専門的な相談窓口です。</p>
+</section>
+<section class="consultation-types">
+<div class="type-card">
+<h3>Joint Research</h3>
+<p><strong>共同研究・学術提携</strong><br/>認知科学、心理学、ロボティクスが交差する領域において、新たなパラダイムを創出するパートナーを募集しています。</p>
+</div>
+<div class="type-card">
+<h3>PoC / Experiments</h3>
+<p><strong>実証実験・社会実装試験</strong><br/>開発中のプロダクトに対し、心理学的アプローチによる受容性評価や、HRI（人間とロボットの相互作用）の最適化実験を実施します。</p>
+</div>
+<div class="type-card">
+<h3>Consulting</h3>
+<p><strong>導入コンサルティング</strong><br/>ロボット導入現場の意思決定者へ、倫理的ガイドライン策定や「不気味の谷」を越えるためのデザイン設計を支援します。</p>
+</div>
+</section>
+<section class="form-section">
+<div class="form-container">
+<div class="manifesto-banner">
+<h2>「鋼の知能に、心の解像度を」</h2>
+<p>技術のスペックを超え、人間中心の価値を数値化・実装するための対話を始めましょう。</p>
+</div>
+<form class="contact-form">
+<div class="form-group">
+<label>お問い合わせ種別</label>
+<select>
+<option>共同研究のご相談</option>
+<option>実証実験（PoC）の依頼</option>
+<option>導入コンサルティング・講演依頼</option>
+<option>メディア取材・その他</option>
+</select>
+</div>
+<div class="form-group">
+<label>氏名</label>
+<input placeholder="例：山田 太郎" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>貴社名 / 所属機関</label>
+<input placeholder="例：株式会社○○ 研究所" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>メールアドレス</label>
+<input placeholder="name@organization.jp" required="" type="email"/>
+</div>
+<div class="form-group">
+<label>ご相談内容</label>
+<textarea placeholder="プロジェクトの概要、または解決したい課題についてご記入ください" rows="6"></textarea>
+</div>
+<button class="submit-btn" type="submit">SEND MESSAGE</button>
+</form>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<h4>ロボット心理学研究所（Robot Psychology Institute）</h4>
+<p>承知いたしました。まだインタビューの入り口ではありますが、現在の「ロボット心理学」という非常に強力で先進的なキーワードをもとに、現時点で想定されるサイトアイデンティティを構築しています。</p>
+</div>
+<div class="footer-links">
+<h5>Sitemap</h5>
+<ul>
+<li><a href="../index.html">ホーム</a></li>
+<li><a href="../index.html">私について</a></li>
+<li><a href="../index.html">哲学</a></li>
+</ul>
+</div>
+<div class="footer-links">
+<h5>Contents</h5>
+<ul>
+<li><a href="../index.html">PROJECTS</a></li>
+<li><a href="../insights/index.html">INSIGHTS</a></li>
+<li><a href="../index.html">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-baseline">
+<div>© 2025 ロボット心理学研究所（Robot Psychology Institute） Portfolio. All rights reserved.</div>
+<div class="narrative">NARRATIVE DESIGN &amp; HUMANITIES</div>
+</div>
+</footer>
+</body>
+</html>

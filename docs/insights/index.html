@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INSIGHTS | ロボット心理学研究所</title>
+<style>
+        :root {
+            --accent-teal: #2dd4bf;
+            --accent-blue: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --font-main: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        /* Header Styles (Matching the identity) */
+        header {
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Main Content Area */
+        main {
+            padding-top: 120px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .insights-hero {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .label {
+            color: var(--accent-teal);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Archive Grid */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 4px;
+            transition: transform 0.3s, border-color 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-teal);
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more::after {
+            content: "→";
+            transition: transform 0.3s;
+        }
+
+        .read-more:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Manifesto Box */
+        .manifesto-callout {
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(45, 212, 191, 0.2);
+            padding: 4rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .manifesto-callout h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .manifesto-callout p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #070b14;
+            padding: 5rem 5% 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h5 {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: var(--accent-teal);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-baseline {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .narrative {
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .manifesto-callout {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">ロボット心理学研究所</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="../vision/index.html">Vision</a>
+<a href="../solutions/index.html">Solutions</a>
+<a href="../contact/index.html">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<div class="insights-hero">
+<span class="label">Knowledge Archive</span>
+<h1 class="gradient-text">INSIGHTS</h1>
+<p class="hero-description">
+            「冷たい技術」に「温かい心理学」を融合させる。ロボット心理学研究所が蓄積してきた、Society 5.0における人間とAI・ロボットの新しい関係性を定義する最新の研究データと知見を公開します。
+        </p>
+</div>
+<section id="latest-research">
+<h2 class="section-title">最新の研究データ (Latest Data)</h2>
+<div class="archive-grid">
+<article class="insight-card">
+<span class="card-meta">WHITE PAPER / 2024.10</span>
+<h3 class="card-title">スペックの追求から、関係性の設計へ：社会受容性のデータ化</h3>
+<p class="card-excerpt">
+                    技術革新が飽和する中、ロボット普及の壁となっている「心理的受容性」を定量化。独自メソッドによる、人間が抱く「投射」と「違和感」の制御プロセスを解説します。
+                </p>
+<a class="read-more" href="../index.html">論文を読む</a>
+</article>
+<article class="insight-card">
+<span class="card-meta">RESEARCH REPORT / 2024.08</span>
+<h3 class="card-title">「不気味の谷」を越えるエシカル・デザインの確立</h3>
+<p class="card-excerpt">
+                    認知科学、心理学、ロボティクスが交差する領域での最新実験結果。介護現場におけるロボットへの「共感」がウェルビーイングに与える影響を数値化。
+                </p>
+<a class="read-more" href="../index.html">レポートを表示</a>
+</article>
+<article class="insight-card">
+<span class="card-meta">CASE STUDY / 2024.06</span>
+<h3 class="card-title">自律走行モビリティにおける「信頼」の動態解析</h3>
+<p class="card-excerpt">
+                    スマートシティ実装におけるミッシングピース。歩行者とモビリティ間の「非言語的コミュニケーション」がもたらす安心感の脳波測定データ。
+                </p>
+<a class="read-more" href="../index.html">ケーススタディを見る</a>
+</article>
+</div>
+</section>
+<div class="manifesto-callout">
+<span class="label">Our Paradigm</span>
+<h2>「知能と感情の交差点に、新しい学問の座標を置く」</h2>
+<p>
+            我々の目的は、単なる自動化の推進ではありません。ロボット心理学という未知の領域を定義し、社会的な価値を提示すること。
+            「便利」の先にある「心地よさ」を数値化し、2030年の人間社会に不可欠なインフラとしての信頼を構築します。
+        </p>
+</div>
+<section id="methodology">
+<h2 class="section-title">独自の分析フレームワーク (Methodology)</h2>
+<div class="archive-grid">
+<article class="insight-card">
+<span class="card-meta">FRAMEWORK</span>
+<h3 class="card-title">定量と定性を統合する評価指標</h3>
+<p class="card-excerpt">
+                    生体反応データ（定量）と心理的ヒアリング（定性）を組み合わせた独自の分析プロセス。HRI（人間とロボットの相互作用）の最適化に向けた、科学的根拠に基づくアプローチ。
+                </p>
+</article>
+<article class="insight-card">
+<span class="card-meta">ROADMAP</span>
+<h3 class="card-title">2030年への展望：技術と社会の融和</h3>
+<p class="card-excerpt">
+                    短期（受容性の向上）、中期（共生モデルの確立）、長期（新しい人間観の創造）の3ステップ。本法人が目指す、Society 5.0における社会変革のロードマップ。
+                </p>
+</article>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<h4>ロボット心理学研究所（Robot Psychology Institute）</h4>
+<p>承知いたしました。まだインタビューの入り口ではありますが、現在の「ロボット心理学」という非常に強力で先進的なキーワードをもとに、現時点で想定されるサイトアイデンティティを構築しています。</p>
+</div>
+<div class="footer-links">
+<h5>Sitemap</h5>
+<ul>
+<li><a href="../index.html">ホーム</a></li>
+<li><a href="../index.html">私について</a></li>
+<li><a href="../index.html">哲学</a></li>
+</ul>
+</div>
+<div class="footer-links">
+<h5>Contents</h5>
+<ul>
+<li><a href="../index.html">PROJECTS</a></li>
+<li><a href="index.html">INSIGHTS</a></li>
+<li><a href="../index.html">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-baseline">
+<div>© 2025 ロボット心理学研究所（Robot Psychology Institute） Portfolio. All rights reserved.</div>
+<div class="narrative">NARRATIVE DESIGN &amp; HUMANITIES</div>
+</div>
+</footer>
+</body>
+</html>

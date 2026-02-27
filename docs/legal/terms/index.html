@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>利用規約 | ロボット心理学研究所（Robot Psychology Institute）</title>
+<style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --accent-teal: #2dd4bf;
+            --accent-blue: #3b82f6;
+            --text-primary: #f8fafc;
+            --text-secondary: #9ca3af;
+            --font-main: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            word-break: break-all;
+        }
+
+        /* Typography */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        /* Header Styles (Snippet provided matches structure) */
+        header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+
+        .page-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent-teal);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--accent-teal);
+            margin-top: 2rem;
+        }
+
+        .content-box {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+        }
+
+        .manifesto-quote {
+            font-style: italic;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+            margin: 3rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        /* Footer Styles (Snippet provided matches structure) */
+        footer {
+            background: #070b14;
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand h4 {
+            margin-bottom: 1rem;
+            color: var(--accent-teal);
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .footer-links h5 {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links ul li::before {
+            content: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-baseline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .narrative {
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">ロボット心理学研究所</div>
+<div class="nav-links">
+<a href="../../index.html">Home</a>
+<a href="../../vision/index.html">Vision</a>
+<a href="../../solutions/index.html">Solutions</a>
+<a href="../../contact/index.html">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<div class="page-header">
+<h1><span class="gradient-text">Terms of Use</span></h1>
+<p>利用規約：学術的知見の保護と社会実装のための規定</p>
+</div>
+<div class="manifesto-quote">
+        「鋼の知能に、心の解像度を。――我々は、技術と心の交差点における権利を定義し、Society 5.0の健全な発展を支えます。」
+    </div>
+<section>
+<h2>第1条：目的と定義</h2>
+<div class="content-box">
+<p>本規約は、ロボット心理学研究所（以下「本研究所」）が提供する「ロボット心理学」に関する学術的知見、研究成果、および技術情報の適切な利用と権利保護を目的としています。Society 5.0における人間中心社会の実現に向け、先進性と信頼性を両立させるためのルールを定めます。</p>
+<ul>
+<li>「本コンテンツ」とは、本サイト上のテキスト、画像、分析レポート、独自の評価指標、および「ロボット心理学」という概念に含まれる一切の知的財産を指します。</li>
+<li>「利用者」とは、本サイトを閲覧、または本研究所の知見を引用・利用する全ての個人、法人、研究機関を指します。</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>第2条：知的財産権と二次利用の規定</h2>
+<div class="content-box">
+<p>本サイトに掲載されている全てのコンテンツの著作権、商標権、その他の知的財産権は、本研究所または正当な権利者に帰属します。冷たい技術に温かい心理学を融合させた独自のメソッドは、厳格に保護されます。</p>
+<h3>1. 学術的引用</h3>
+<p>研究論文、レポート等の学術目的での引用は、出典を明記（例：ロボット心理学研究所 著「○○」より引用）する場合に限り、自由に行っていただくことができます。ただし、文脈を著しく歪める改変は禁じます。</p>
+<h3>2. 二次利用の制限</h3>
+<p>商用目的での無断転載、再配布、または本研究所の独自の分析フレームワーク（HRI最適化モデル等）を用いたコンサルティング業務への流用は、事前の書面による承諾が必要です。未踏の領域を共に定義するパートナーシップをご検討ください。</p>
+</div>
+</section>
+<section>
+<h2>第3条：免責事項</h2>
+<div class="content-box">
+<p>本研究所は、提供する情報の正確性と最新性の確保に努めておりますが、以下の点について保証するものではありません。</p>
+<ul>
+<li>「ロボット心理学」は発展途上の未定義領域を含むため、提供される知見が全ての技術実装環境において恒久的な成果を保証するものではないこと。</li>
+<li>ロボットが導入される現場の意思決定における最終的な責任は、利用者自身に帰属すること。</li>
+<li>「不気味の谷」や「心理的受容性」の数値化データは、特定の条件下での生体反応に基づくものであり、全ての個人の感性を画一化するものではないこと。</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>第4条：禁止事項</h2>
+<div class="content-box">
+<p>利用者は、以下の行為を行ってはなりません。</p>
+<ul>
+<li>本研究所のブランドアイデンティティを毀損する行為。</li>
+<li>アカデミックな厳格さを損なう、科学的根拠のない主張への本コンテンツの紐付け。</li>
+<li>ロボットと人間の「共生」の質を問うメッセージを、悪意を持って改ざんする行為。</li>
+<li>本サイトのサーバーまたはネットワークに過度な負荷をかける行為。</li>
+</ul>
+</div>
+</section>
+<section>
+<h2>第5条：準拠法および裁判管轄</h2>
+<div class="content-box">
+<p>本規約の解釈にあたっては、日本法を準拠法とします。本サービスに関して紛争が生じた場合には、本研究所の所在地を管轄する裁判所を専属的合意管轄とします。</p>
+</div>
+</section>
+<p style="text-align: right; color: var(--text-secondary); font-size: 0.9rem;">
+        改訂日：2025年1月1日
+    </p>
+</main>
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<h4>ロボット心理学研究所（Robot Psychology Institute）</h4>
+<p>承知いたしました。まだインタビューの入り口ではありますが、現在の「ロボット心理学」という非常に強力で先進的なキーワードをもとに、現時点で想定されるサイトアイデンティティを構築しています。</p>
+</div>
+<div class="footer-links">
+<h5>Sitemap</h5>
+<ul>
+<li><a href="../../index.html">ホーム</a></li>
+<li><a href="../../index.html">私について</a></li>
+<li><a href="../../index.html">哲学</a></li>
+</ul>
+</div>
+<div class="footer-links">
+<h5>Contents</h5>
+<ul>
+<li><a href="../../index.html">PROJECTS</a></li>
+<li><a href="../../insights/index.html">INSIGHTS</a></li>
+<li><a href="../../index.html">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-baseline">
+<div>© 2025 ロボット心理学研究所（Robot Psychology Institute） Portfolio. All rights reserved.</div>
+<div class="narrative">NARRATIVE DESIGN &amp; HUMANITIES</div>
+</div>
+</footer>
+</body>
+</html>

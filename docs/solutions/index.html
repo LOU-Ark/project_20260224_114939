@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SOLUTIONS | ロボット心理学研究所</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;family=Noto+Sans+JP:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --accent-teal: #2dd4bf;
+            --accent-blue: #3b82f6;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --bg-dark: #0a0a0c;
+            --bg-card: #16161a;
+            --font-main: 'Inter', 'Noto Sans JP', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Design Tokens & Utilities --- */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 120px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- Header Override Styles --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            font-size: 1.2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        /* --- Hero Section --- */
+        .solutions-hero {
+            padding-top: 200px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+
+        .solutions-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .solutions-hero p {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* --- Method Grid --- */
+        .methodology-section {
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.05), transparent);
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--accent-teal);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .method-visual {
+            position: relative;
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .method-visual::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--accent-teal);
+            filter: blur(100px);
+            opacity: 0.1;
+            top: -50px;
+            right: -50px;
+        }
+
+        /* --- Cards --- */
+        .solution-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 2px;
+            border-top: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-top: 2px solid var(--accent-teal);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .card h3 {
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* --- Use Case Section --- */
+        .use-case-list {
+            margin-top: 40px;
+        }
+
+        .use-case-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .use-case-label {
+            font-weight: 700;
+            width: 30%;
+        }
+
+        .use-case-desc {
+            width: 65%;
+            color: var(--text-secondary);
+        }
+
+        /* --- CTA --- */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-dark), #0f172a);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 20px 50px;
+            background: var(--text-primary);
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-teal);
+            color: var(--text-primary);
+            transform: scale(1.05);
+        }
+
+        /* --- Footer Styles --- */
+        footer {
+            padding: 100px 40px 40px;
+            background: #050507;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            max-width: 400px;
+        }
+
+        .footer-links h5 {
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-teal);
+        }
+
+        .footer-baseline {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .narrative {
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .use-case-item { flex-direction: column; }
+            .use-case-label, .use-case-desc { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">ロボット心理学研究所</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="../vision/index.html">Vision</a>
+<a href="index.html">Solutions</a>
+<a href="../contact/index.html">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="solutions-hero" id="hero">
+<div class="container">
+<span class="section-tag">Methodology &amp; Implementation</span>
+<h1><span class="gradient-text">実装を加速させる、<br/>科学的アプローチの体系化</span></h1>
+<p>抽象的な概念としての「ロボット心理学」を、ビジネスと研究の現場へ。我々は、人間とAI・ロボットの共生を具体化する独自のフレームワークを提供します。</p>
+</div>
+</section>
+<!-- Methodology Section -->
+<section class="methodology-section" id="methodology">
+<div class="container">
+<div class="grid-2">
+<div>
+<span class="section-tag">Our Paradigm</span>
+<h2>「便利」の先にある<br/>「心地よさ」の数値化</h2>
+<p style="margin-top: 24px;">効率化のツールとしてのロボットから、信頼されるパートナーへ。我々は、人間がロボットに対して抱く「投射」「共感」「違和感（不気味の谷）」を精密に制御し、社会の幸福（ウェルビーイング）に直結する実装モデルを構築します。</p>
+</div>
+<div class="method-visual">
+<h3 class="gradient-text" style="font-size: 1rem; margin-bottom: 20px;">ロボット心理学分析フレームワーク</h3>
+<div style="font-size: 0.85rem; border-left: 2px solid var(--accent-teal); padding-left: 20px;">
+<div style="margin-bottom: 15px;">
+<strong>PHASE 01: 心理的受容性の可視化</strong><br/>
+<span style="color: var(--text-secondary);">ターゲットユーザーのメンタルモデル抽出</span>
+</div>
+<div style="margin-bottom: 15px;">
+<strong>PHASE 02: HRI（相互作用）最適化</strong><br/>
+<span style="color: var(--text-secondary);">生体反応データに基づくインタラクション設計</span>
+</div>
+<div>
+<strong>PHASE 03: エシカル・ガバナンス策定</strong><br/>
+<span style="color: var(--text-secondary);">倫理的・心理的ガイドラインの社会実装</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions Menu -->
+<section id="value-prop">
+<div class="container">
+<div style="text-align: center; margin-bottom: 80px;">
+<span class="section-tag">Services</span>
+<h2>具体的なソリューション体系</h2>
+</div>
+<div class="solution-cards">
+<div class="card">
+<h3>コンサルティング</h3>
+<p>製品開発の初期段階から参画。ロボット心理学の知見に基づき、ユーザーの心理的障壁を最小化するデザイン戦略を策定します。</p>
+</div>
+<div class="card">
+<h3>評価試験・データ分析</h3>
+<p>生体反応（定量）と心理的ヒアリング（定性）を統合。独自の評価指標を用いて、社会実装時の心理的影響を数値化します。</p>
+</div>
+<div class="card">
+<h3>共同研究 / 実証実験</h3>
+<p>大学・研究機関とのネットワークを活用。次世代のSociety 5.0を見据えたプロトタイピングと学術的検証を推進します。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Use Cases -->
+<section id="use-cases">
+<div class="container">
+<span class="section-tag">Case Study / Domains</span>
+<h2>社会のあらゆる接点に、心の知性を。</h2>
+<div class="use-case-list">
+<div class="use-case-item">
+<div class="use-case-label">医療・介護現場</div>
+<div class="use-case-desc">「介護ロボット」に対する拒絶反応を和らげ、ケアの質と心理的充足を両立させるコミュニケーション・プロトコルの開発。</div>
+</div>
+<div class="use-case-item">
+<div class="use-case-label">自律走行モビリティ</div>
+<div class="use-case-desc">歩行者と車両の「視線」や「間（ま）」のデザイン。都市空間における自律移動体への信頼醸成と心理的安全性の確保。</div>
+</div>
+<div class="use-case-item">
+<div class="use-case-label">スマートシティ</div>
+<div class="use-case-desc">公共空間に溶け込むAIエージェントの設計。データ駆動型社会における、人間中心の「心地よい」都市体験の構築。</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology Detail -->
+<section id="analysis-framework" style="background: #000;">
+<div class="container">
+<div style="max-width: 800px; margin: 0 auto; text-align: center;">
+<span class="section-tag">Our Unique Approach</span>
+<h2>定量と定性を統合する、独自の評価指標</h2>
+<p style="margin-top: 30px; color: var(--text-secondary);">
+                    我々は、スペックの追求では到達できない「関係性の質」を計測します。
+                    最新の認知科学に基づいた生体反応データと、深層心理へのインタビューを組み合わせることで、
+                    テクノロジーと人間が融和する「最適解」を導き出します。
+                </p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="cta-section" id="cta">
+<div class="container">
+<h2>未踏の領域を、共に定義する。</h2>
+<p style="margin-top: 20px; color: var(--text-secondary);">共同研究、実装支援、講演等のご依頼。未来のスタンダードを創り出すパートナーシップをお待ちしております。</p>
+<a class="cta-button" href="../contact/index.html">CONTACT INQUIRY</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<h4>ロボット心理学研究所（Robot Psychology Institute）</h4>
+<p>承知いたしました。まだインタビューの入り口ではありますが、現在の「ロボット心理学」という非常に強力で先進的なキーワードをもとに、現時点で想定されるサイトアイデンティティを構築しています。</p>
+</div>
+<div class="footer-links">
+<h5>Sitemap</h5>
+<ul>
+<li><a href="../index.html">ホーム</a></li>
+<li><a href="../index.html">私について</a></li>
+<li><a href="../index.html">哲学</a></li>
+</ul>
+</div>
+<div class="footer-links">
+<h5>Contents</h5>
+<ul>
+<li><a href="../index.html">PROJECTS</a></li>
+<li><a href="../insights/index.html">INSIGHTS</a></li>
+<li><a href="../index.html">お問い合わせ</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-baseline">
+<div>© 2025 ロボット心理学研究所（Robot Psychology Institute） Portfolio. All rights reserved.</div>
+<div class="narrative">NARRATIVE DESIGN &amp; HUMANITIES</div>
+</div>
+</footer>
+</body>
+</html>
